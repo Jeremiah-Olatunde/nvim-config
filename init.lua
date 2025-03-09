@@ -34,6 +34,8 @@ vim.wo.foldenable = false
 vim.wo.foldcolumn = "auto"
 vim.wo.foldmethod = "indent"
 
+vim.opt.swapfile = false
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
