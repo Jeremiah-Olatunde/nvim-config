@@ -40,11 +40,15 @@ vim.opt.swapfile = false
 require("lazy").setup({
   spec = {
     -- add your plugins here
-
+   { 
+      "catppuccin/nvim", name = "catppuccin", priority = 1000 
+   },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
+  install = { colorscheme = { "catppuccin" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
 })
+
+vim.cmd("colorscheme catppuccin-mocha")
