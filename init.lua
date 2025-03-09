@@ -32,7 +32,8 @@ vim.opt.expandtab = true
 
 vim.wo.foldenable = false
 vim.wo.foldcolumn = "auto"
-vim.wo.foldmethod = "indent"
+vim.wo.foldmethod = "expr"
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()";
 
 vim.opt.swapfile = false
 
