@@ -99,14 +99,14 @@ require("lazy").setup({
       opts = {
         format_on_save = true,
         formatters_by_ft  = {
-          css = { "prettierd" },
-          html = { "prettierd" },
-          json = { "prettierd" },
-          jsonc = { "prettierd" },
-          javascript = { "prettierd" },
-          javascriptreact = { "prettierd" },
-          typescript = { "prettierd" },
-          typescriptreact = { "prettierd" },
+          css = { "biome" },
+          html = { "biome" },
+          json = { "biome" },
+          jsonc = { "biome" },
+          javascript = { "biome" },
+          javascriptreact = { "biome" },
+          typescript = { "biome" },
+          typescriptreact = { "biome" },
         }
       },
     },
