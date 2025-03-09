@@ -74,7 +74,7 @@ require("lazy").setup({
 
         lspconfig.vtsls.setup({
           single_file_support = true,
-          root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git"),
+          root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json"),
           filetypes = {
             "javascript",
             "javascript.jsx",
