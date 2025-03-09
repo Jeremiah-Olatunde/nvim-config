@@ -39,10 +39,9 @@ vim.opt.swapfile = false
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
-    -- add your plugins here
-   { 
-      "catppuccin/nvim", name = "catppuccin", priority = 1000 
-   },
+    { 
+      "catppuccin/nvim", name = "catppuccin", priority = 1000,
+    },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
