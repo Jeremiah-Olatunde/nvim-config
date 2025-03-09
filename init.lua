@@ -37,6 +37,8 @@ vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()";
 
 vim.opt.swapfile = false
 
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
@@ -91,6 +93,22 @@ require("lazy").setup({
           root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
         })
       end
+    },
+    {
+      "stevearc/conform.nvim",
+      opts = {
+        format_on_save = true,
+        formatters_by_ft  = {
+          css = { "prettierd" },
+          html = { "prettierd" },
+          json = { "prettierd" },
+          jsonc = { "prettierd" },
+          javascript = { "prettierd" },
+          javascriptreact = { "prettierd" },
+          typescript = { "prettierd" },
+          typescriptreact = { "prettierd" },
+        }
+      },
     },
     {
       "nvim-lualine/lualine.nvim",
