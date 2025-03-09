@@ -49,6 +49,7 @@ require("lazy").setup({
         local configs = require("nvim-treesitter.configs")
         configs.setup({
           highlight = { enable = true },
+          ensure_installed = { "lua", "markdown", "markdown_inline" }
         })
       end
     },
