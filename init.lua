@@ -73,7 +73,7 @@ require("lazy").setup({
         local lspconfig = require("lspconfig")
 
         lspconfig.vtsls.setup({
-          single_file_support = true,
+          single_file_support = false,
           root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json"),
           filetypes = {
             "javascript",
@@ -83,6 +83,12 @@ require("lazy").setup({
             "typescript.tsx",
             "typescriptreact",
           },
+        })
+
+        lspconfig.denols.setup({
+          auto_start = true,
+          single_file_support = false,
+          root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
         })
       end
     },
