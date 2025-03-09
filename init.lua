@@ -30,6 +30,10 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 
+vim.wo.foldenable = false
+vim.wo.foldcolumn = "auto"
+vim.wo.foldmethod = "indent"
+
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
