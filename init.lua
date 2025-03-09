@@ -70,18 +70,32 @@ require("lazy").setup({
     {
       "neovim/nvim-lspconfig",
       config = function ()
+        local lspconfig = require("lspconfig")
+
+        lspconfig.vtsls.setup({
+          single_file_support = true,
+          root_dir = lspconfig.util.root_pattern("tsconfig.json", "package.json", "jsconfig.json", ".git"),
+          filetypes = {
+            "javascript",
+            "javascript.jsx",
+            "javascriptreact",
+            "typescript",
+            "typescript.tsx",
+            "typescriptreact",
+          },
+        })
       end
     },
     {
-      'nvim-lualine/lualine.nvim',
-      dependencies = { 'nvim-tree/nvim-web-devicons' },
+      "nvim-lualine/lualine.nvim",
+      dependencies = { "nvim-tree/nvim-web-devicons" },
       config = function ()
-          require('lualine').setup ({
+          require("lualine").setup ({
             options = {
               icons_enabled = true,
-              theme = 'auto',
-              component_separators = { left = '|', right = '|'},
-              section_separators = { left = '', right = ''},
+              theme = "auto",
+              component_separators = { left = "|", right = "|"},
+              section_separators = { left = "", right = ""},
               disabled_filetypes = {
                 statusline = {},
                 winbar = {},
@@ -97,18 +111,18 @@ require("lazy").setup({
               }
             },
             sections = {
-              lualine_a = {'mode'},
-              lualine_b = {'diagnostics'},
-              lualine_c = {'filename'},
-              lualine_x = {'buffers'},
+              lualine_a = {"mode"},
+              lualine_b = {"diagnostics"},
+              lualine_c = {"filename"},
+              lualine_x = {"buffers"},
               lualine_y = {},
-              lualine_z = {'location'}
+              lualine_z = {"location"}
             },
             inactive_sections = {
               lualine_a = {},
               lualine_b = {},
-              lualine_c = {'filename'},
-              lualine_x = {'location'},
+              lualine_c = {"filename"},
+              lualine_x = {"location"},
               lualine_y = {},
               lualine_z = {}
             },
