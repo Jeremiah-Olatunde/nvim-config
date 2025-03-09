@@ -50,7 +50,20 @@ require("lazy").setup({
         local configs = require("nvim-treesitter.configs")
         configs.setup({
           highlight = { enable = true },
-          ensure_installed = { "lua", "markdown", "markdown_inline", "vim", "vimdoc" }
+          ensure_installed = { 
+            "css",
+            "lua",
+            "markdown",
+            "markdown_inline",
+            "html",
+            "javascript",
+            "json",
+            "jsonc",
+            "typescript",
+            "tsx",
+            "vim",
+            "vimdoc",
+          }
         })
       end
     },
@@ -107,11 +120,8 @@ require("lazy").setup({
     },
   },
 
-  -- Configure any other settings here. See the documentation for more details.
-  -- colorscheme that will be used when installing plugins.
   install = { colorscheme = { "catppuccin" } },
-  -- automatically check for plugin updates
-  checker = { enabled = true },
+  checker = { enabled = false },
 })
 
 vim.cmd("colorscheme catppuccin-mocha")
