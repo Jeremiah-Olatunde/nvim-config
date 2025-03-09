@@ -68,6 +68,11 @@ require("lazy").setup({
       end
     },
     {
+      "neovim/nvim-lspconfig",
+      config = function ()
+      end
+    },
+    {
       'nvim-lualine/lualine.nvim',
       dependencies = { 'nvim-tree/nvim-web-devicons' },
       config = function ()
