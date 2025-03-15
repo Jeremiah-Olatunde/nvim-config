@@ -53,7 +53,14 @@ require("lazy").setup({
         configs.setup({
           highlight = { enable = true },
           ensure_installed = { 
+            "bash",
             "css",
+            "dockerfile",
+            "git_config",
+            "git_rebase",
+            "gitattributes",
+            "gitcommit",
+            "gitignore",
             "lua",
             "markdown",
             "markdown_inline",
@@ -61,8 +68,8 @@ require("lazy").setup({
             "javascript",
             "json",
             "jsonc",
-            "typescript",
             "tsx",
+            "typescript",
             "vim",
             "vimdoc",
           }
@@ -92,6 +99,8 @@ require("lazy").setup({
           single_file_support = false,
           root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
         })
+
+        lspconfig.bashls.setup({})
       end
     },
     {
