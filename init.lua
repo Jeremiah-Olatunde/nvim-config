@@ -33,11 +33,13 @@ vim.opt.expandtab = true
 vim.wo.foldenable = false
 vim.wo.foldcolumn = "auto"
 vim.wo.foldmethod = "expr"
-vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()";
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 
 vim.opt.swapfile = false
 
 vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
+vim.diagnostic.config({ virtual_text = true })
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -68,6 +70,8 @@ require("lazy").setup({
             "javascript",
             "json",
             "jsonc",
+            "rust",
+            "toml",
             "tsx",
             "typescript",
             "vim",
@@ -97,10 +101,12 @@ require("lazy").setup({
         lspconfig.denols.setup({
           auto_start = true,
           single_file_support = false,
-          root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
+          root_dir = lspconfig.util.root_pattern("deno.json", "deno.jsonc"),
         })
 
         lspconfig.bashls.setup({})
+
+        lspconfig.rust_analyzer.setup({})
       end
     },
     {
@@ -116,6 +122,7 @@ require("lazy").setup({
           javascriptreact = { "biome" },
           typescript = { "biome" },
           typescriptreact = { "biome" },
+          rust = { "rustfmt" },
         }
       },
     },
